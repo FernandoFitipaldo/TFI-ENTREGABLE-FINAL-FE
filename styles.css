@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* --------Colores primarios-------- */
+    --primary-color-blue: rgb(35, 44, 81);
+    --primary-color-orange: rgb(242, 95, 58);
+    --primary-color-white: rgb(255, 255, 255);
+    /* --------Colores secundarios-------- */
+        /* Azules */
+    --secondary-color-blue: rgb(29, 30, 37);
+    --secondary-color-blue-hover: rgb(78, 96, 158);
+    --secondary-color-darkblue: rgb(24, 24, 27);
+        /* Rojizos */
+    --secondary-color-orange: rgb(250, 143, 116);
+    --secondary-color-error-red: rgb(156, 73, 82);
+    --secondary-color-error-red-2: rgb(238, 194, 194);
+        /* Blancos-negros */
+    --secondary-color-white: rgb(255, 239, 234);
+    --secondary-color-lightgrey: rgb(241, 225, 225);
+    --secondary-color-greyblue: rgb(143, 148, 167);
+    /*--------Variantes transparentes--------*/
+    --secondary-color-darkblue-transparent: rgba(24, 24, 27, 0.95);
+    --primary-color-orange-transparent: rgba(242, 95, 58, 0.6);
+    --secondary-color-lightgrey-transparent: rgba(249, 249, 249,0.9);  
+}
+
+/* --------Estilos generales-------- */
+body{
+    /* Disposición */
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    /* Dimensiones */
+    width: 100vw;
+    /* Background */
+    background-color: var(--primary-color-white);
+    /* Texto */
+    color: var(--primary-color-blue);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 16px;
+    /* Visibilidad */
+    overflow-x: hidden;
+}
+
+button{
+    /* Dimensiones */
+    height: 5vh;
+    min-height: 40px;
+    max-height: 50px;
+    width: 15vh;
+    min-width: 150px;
+    max-width: 155px;
+    /* Background y borde */
+    background-color: var(--primary-color-orange);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 7px 15px var(--primary-color-orange-transparent);
+    /* Texto */
+    color: var(--primary-color-white);
+    font-size: 0.83rem;
+    font-weight: 700;
+}
+
+button:hover{
+    /* Background */
+    background-color: var(--secondary-color-orange);
+    /* Texto */
+    color: var(--secondary-color-white);
+    /* Estilo del cursor */
+    cursor: pointer;
+}
+
+a{
+    /* Texto */
+    text-decoration: none;
+}
+
+/* --------Estilos del header-------- */
+header{
+    /* Disposición */
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    /* Dimensiones */
+    width: 100vw;
+    /* Background */
+    background-color: var(--secondary-color-lightgrey-transparent);     
+}
+
+nav{
+    /* Disposición */
+    display: flex;
+    /* Dimensiones */ 
+    overflow-x: hidden;
+}
+
+.company-logo{
+     /* Background */
+    background-image: url(../img/logo.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.menu-links>ul{
+    /* Estilos de lista */
+    list-style-type: none;  
+    /* Disposición */
+    display: flex;
+}
+
+/* --------Estilos de etiqueta Main-------- */
+main{
+    /* Disposición */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Estilos de sección de descripción */
+#description{
+    /* Disposición */
+    display: flex;
+    align-items: center;
+    /* Dimensiones */
+    height: auto;
+}
+
+#description>div{
+    /* Disposición */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#description p{
+    /* Dimensiones */
+    width: 61%;
+    min-width: 300px;
+    /* Texto */
+    color: var(--secondary-color-greyblue); 
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+/* Estilos de sección de características */
+#traits{
+    /* Disposición */
+    display: flex;
+    /* Dimensiones */
+    margin-top:12vh;
+}
+
+#traits>div{
+    /* Disposición */
+    display: flex;
+    flex-direction: column;
+}
+
+#traits>div>p{
+    /* Texto */
+    color: var(--secondary-color-greyblue);
+
+}
+
+
+#traits ol { 
+    /* Estilos de lista */
+    list-style-type: none;
+    /* Contador para los números de la lista */
+    counter-reset:list-number;  
+}
+
+#traits li::before { 
+    /* Disposición */
+    float: left;
+    /* Background y borde */
+    background-color: var(--primary-color-orange);
+    border: none;
+    border-radius: 30px;
+    /* Texto */
+    color: var(--primary-color-white);
+    font-weight: 500;
+    /* Contenido para numerar la lista e incremento del contador */
+    content: counter(list-number, decimal-leading-zero); 
+    counter-increment: list-number;
+}
+/* -------Modificación de la numeración de lista/Termina acá------- */
+    
+/* Modificación al título de cada característica*/
+#traits li>div>p{ 
+    /* Texto */
+    color: var(--primary-color-blue);
+    font-weight: 700;   
+}
+/* Modificación a la descripción de cada característica */
+#traits li>p:nth-child(2){ 
+    /* Texto */
+    color: var(--secondary-color-greyblue);
+}
+
+/* Estilos de sección de opiniones */
+#opinions{
+    /* Disposición */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+#slides{
+    /* Disposición */
+    display: flex;
+    /* Dimensiones */
+    width: 95vw;
+    margin-bottom: 3rem;
+}
+
+.people{
+    /* Disposición */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Dimensiones */
+    padding-bottom: 3rem;
+}
+
+.people img{
+    /* Dimensiones */
+    width: 75px;
+}
+
+/* ESTILOS PERSONALES*/
+.people>p:nth-child(3){
+    /* Texto */
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 4rem;
+ }
+
+/* Estilo de las opiniones de cada persona */
+.people>p:nth-child(4){
+    /* Texto */
+    color: var(--secondary-color-greyblue);
+    line-height: 1.7rem;
+    text-align: center; 
+ }
+
+/* Estilo de sección de ad */
+#join-ad{
+    /* Disposición */
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    background-color: var(--primary-color-orange);
+}
+
+#join-ad p{
+    color: var(--primary-color-white);
+    font-weight: 700;   
+}
+
+#join-ad button{
+    background-color: var(--primary-color-white);
+    box-shadow: none;
+    color: var(--primary-color-orange);
+}
